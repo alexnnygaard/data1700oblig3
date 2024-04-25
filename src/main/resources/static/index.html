@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <script src="kinobilletter.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Kinobilletter</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Bestilling av kinobilletter</h1>
+            <form id="bestilling" onsubmit="formSubmit(); return false">
+                <div class="form-group">
+                    <label for="film">Velg film:</label>
+                    <select name="film" class="form-control" id="film" required>
+                        <!-- Non-clickable option that is hidden when selected so the dropdown displays that instead of the first movie on the list -->
+                        <option hidden disabled selected value>Velg film her</option>
+                        <option value="Pulp Fiction">Pulp Fiction</option>
+                        <option value="Twilight">Twilight</option>
+                        <option value="Chicken Run: Dawn of the Nugget">Chiken Run: Dawn of the Nugget</option>
+                        <option value="Pretty Woman">Pretty Woman</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="antall">Antall:</label>
+                    <input type="number" class="form-control" id="antall" name="antall" min="1" max="100" required>
+                </div>
+                <div class="form-group">
+                    <label for="fornavn">Fornavn:</label>
+                    <input type="text" class="form-control" id="fornavn" name="fornavn" min="1" max="255" required>
+                </div>
+                <div class="form-group">
+                    <label for="etternavn">Etternavn:</label>
+                    <input type="text" class="form-control" id="etternavn" name="etternavn" min="1" max="255" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefon">Telefonnr:</label>
+                    <input type="tel" class="form-control" id="telefon" name="telefon">
+                </div>
+                <div class="form-group">
+                    <label for="epost">Epost:</label>
+                    <input type="email" class="form-control" id="epost" name="epost">
+                </div>
+                <input type="submit" class="btn btn-primary" value="Kjøp Billett">
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h2>Alle Billetter</h2>
+            <div id="billettContainer"></div>
+
+            <button class="btn btn-danger" onclick="slettAlle()">Slett alle billettene</button>
+            <!-- Clicking this button executes the slettAlle script, deleting the values in the array -->
+        </div>
+    </div>
+</div>
+</body>
+</html>
