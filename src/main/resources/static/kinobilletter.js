@@ -26,6 +26,20 @@ function formSubmit() {
         return;
     }
 
+    const fornavnRegex = /^[a-zA-ZæøåÆØÅ .\-]{2,20}$/;
+    if (!fornavnRegex.test(billetter.fornavn)) {
+        alert("Vennligst skriv en gyldig fornavn, kun bokstaver");
+        return;
+    }
+
+    const etternavnRegex = /^[a-zA-ZæøåÆØÅ .\-]{2,30}$/;
+    if (!etternavnRegex.test(billetter.etternavn)) {
+        alert("Vennligst skriv en gyldig etternavn, kun bokstaver");
+        return;
+    }
+
+
+
     console.log(billetter)
     $.post("/lagre",billetter, function() {
         hentAlle()

@@ -11,8 +11,7 @@ Fullt navn: Alexandra Nilsen-Nygaard
 Kort beskrivelse av applikasjon:
 Applikasjon for å bestille kinobilletter. 
 
-Har laget en kinobestillings applikasjon, bare klient side ved 
-bruk av javascript og html. regex validering for 
+Har laget en applikasjon for å bestille kinobilletter. regex validering for 
 å skjekke input. Billettene vises på skermen i en liste når man trykker
 på kjøp billett. Det er også en knapp for å slette billetter. 
 Det er lagt inn 4 filmer man kan velge mellom. kino.js og 
